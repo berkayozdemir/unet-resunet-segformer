@@ -1,1 +1,0 @@
-put all images in this folder (without seperating mask or frame)
