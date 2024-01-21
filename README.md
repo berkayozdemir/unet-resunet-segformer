@@ -5,7 +5,7 @@ Run the train.py in the architecture you want.
 
 
 PIP VERSIONS:
-python : 3.9
-tensorflow: 2.13.1 
-torch: 2.1.2  
-transformers: 4.36.2
+python : 3.9.
+tensorflow: 2.13.1 .
+torch: 2.1.2  .
+transformers: 4.36.2.
