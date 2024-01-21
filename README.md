@@ -1,7 +1,7 @@
-This repository contains the code for the Multiclass Segmentation using the UNET, Segformer and RESUNET architecture on Web Page Images Segmentation. \n
-Put your train images into: data/train. \n
-Put your train images into: data/mask. \n
-Run the train.py in the architecture you want.\n
+This repository contains the code for the Multiclass Segmentation using the UNET, Segformer and RESUNET architecture on Web Page Images Segmentation. `<br>`
+Put your train images into: data/train. `<br>`
+Put your train images into: data/mask. `<br>`
+Run the train.py in the architecture you want. `<br>`
 
 
 PIP VERSIONS:\n
