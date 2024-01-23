@@ -1,0 +1,139 @@
+C:\Users\berka\PycharmProjects\pythonProject9\venv\Scripts\python.exe C:\Users\berka\PycharmProjects\pythonProject9\xx\segformer\train.py 
+C:\Users\berka\PycharmProjects\pythonProject9\venv\lib\site-packages\transformers\models\segformer\feature_extraction_segformer.py:28: FutureWarning: The class SegformerFeatureExtractor is deprecated and will be removed in version 5 of Transformers. Please use SegformerImageProcessor instead.
+  warnings.warn(
+C:\Users\berka\PycharmProjects\pythonProject9\venv\lib\site-packages\transformers\models\segformer\image_processing_segformer.py:101: FutureWarning: The `reduce_labels` parameter is deprecated and will be removed in a future version. Please use `do_reduce_labels` instead.
+  warnings.warn(
+{'pixel_values': tensor([[[2.2489, 2.2489, 2.2489,  ..., 2.2489, 2.2489, 2.2489],
+         [2.2489, 2.2489, 2.2489,  ..., 2.2489, 2.2489, 2.2489],
+         [2.1975, 2.1975, 2.1975,  ..., 2.2489, 2.2489, 2.2489],
+         ...,
+         [2.2489, 2.2489, 2.2489,  ..., 2.2489, 2.2489, 2.2489],
+         [2.2489, 2.2489, 2.2489,  ..., 2.2489, 2.2489, 2.2489],
+         [2.2489, 2.2489, 2.2489,  ..., 2.2489, 2.2489, 2.2489]],
+
+        [[2.4286, 2.4286, 2.4286,  ..., 2.4286, 2.4286, 2.4286],
+         [2.4286, 2.4286, 2.4286,  ..., 2.4286, 2.4286, 2.4286],
+         [2.3761, 2.3761, 2.3761,  ..., 2.4286, 2.4286, 2.4286],
+         ...,
+         [2.4286, 2.4286, 2.4286,  ..., 2.4286, 2.4286, 2.4286],
+         [2.4286, 2.4286, 2.4286,  ..., 2.4286, 2.4286, 2.4286],
+         [2.4286, 2.4286, 2.4286,  ..., 2.4286, 2.4286, 2.4286]],
+
+        [[2.6400, 2.6400, 2.6400,  ..., 2.6400, 2.6400, 2.6400],
+         [2.6400, 2.6400, 2.6400,  ..., 2.6400, 2.6400, 2.6400],
+         [2.5877, 2.5877, 2.5877,  ..., 2.6400, 2.6400, 2.6400],
+         ...,
+         [2.6400, 2.6400, 2.6400,  ..., 2.6400, 2.6400, 2.6400],
+         [2.6400, 2.6400, 2.6400,  ..., 2.6400, 2.6400, 2.6400],
+         [2.6400, 2.6400, 2.6400,  ..., 2.6400, 2.6400, 2.6400]]]), 'labels': tensor([[255, 255, 255,  ..., 255, 255, 255],
+        [255, 255, 255,  ..., 255, 255, 255],
+        [255, 255, 255,  ..., 255, 255, 255],
+        ...,
+        [255, 255, 255,  ..., 255, 255, 255],
+        [255, 255, 255,  ..., 255, 255, 255],
+        [255, 255, 255,  ..., 255, 255, 255]])}
+tensor([ 28,  75, 104, 149, 255])
+torch.Size([3, 512, 512])
+torch.Size([512, 512]) torch.Size([5])
+Some weights of SegformerForSemanticSegmentation were not initialized from the model checkpoint at nvidia/mit-b0 and are newly initialized: ['decode_head.batch_norm.bias', 'decode_head.batch_norm.weight', 'decode_head.linear_c.0.proj.weight', 'decode_head.linear_c.2.proj.bias', 'decode_head.batch_norm.num_batches_tracked', 'decode_head.linear_c.1.proj.weight', 'decode_head.linear_c.3.proj.bias', 'decode_head.linear_c.0.proj.bias', 'decode_head.batch_norm.running_mean', 'decode_head.batch_norm.running_var', 'decode_head.linear_c.2.proj.weight', 'decode_head.linear_c.1.proj.bias', 'decode_head.linear_c.3.proj.weight', 'decode_head.classifier.bias', 'decode_head.classifier.weight', 'decode_head.linear_fuse.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+C:\Users\berka\PycharmProjects\pythonProject9\xx\segformer\train.py:120: FutureWarning: load_metric is deprecated and will be removed in the next major version of datasets. Use 'evaluate.load' instead, from the new library 🤗 Evaluate: https://huggingface.co/docs/evaluate
+  metric = load_metric("mean_iou")
+C:\Users\berka\PycharmProjects\pythonProject9\venv\lib\site-packages\datasets\load.py:752: FutureWarning: The repository for mean_iou contains custom code which must be executed to correctly load the metric. You can inspect the repository content at https://raw.githubusercontent.com/huggingface/datasets/2.16.1/metrics/mean_iou/mean_iou.py
+You can avoid this message in future by passing the argument `trust_remote_code=True`.
+Passing `trust_remote_code=True` will be mandatory to load this metric from the next major release of `datasets`.
+  warnings.warn(
+Model Initialized!
+Epoch: 0
+  0%|          | 0/200 [00:00<?, ?it/s]
+Loss: 5.0225090980529785
+Mean_iou: 0.004819608145721163
+Mean accuracy: 0.08203074951953876
+C:\Users\berka\.cache\huggingface\modules\datasets_modules\metrics\mean_iou\927b58f57da3f4b6e385e47d8a4b3947ee3f7cfcdba9b9359eba2ada2ed6b951\mean_iou.py:258: RuntimeWarning: invalid value encountered in divide
+  iou = total_area_intersect / total_area_union
+C:\Users\berka\.cache\huggingface\modules\datasets_modules\metrics\mean_iou\927b58f57da3f4b6e385e47d8a4b3947ee3f7cfcdba9b9359eba2ada2ed6b951\mean_iou.py:259: RuntimeWarning: invalid value encountered in divide
+  acc = total_area_intersect / total_area_label
+Loss: 1.0534456968307495
+Mean_iou: 0.2851596325077982
+Mean accuracy: 0.48853028916033825
+Epoch: 1
+  0%|          | 0/200 [00:00<?, ?it/s]
+Loss: 0.4526020884513855
+Mean_iou: 0.522525976470158
+Mean accuracy: 0.629530526216941
+Loss: 0.47078216075897217
+Mean_iou: 0.5723972499500855
+Mean accuracy: 0.6619429060671846
+Epoch: 2
+  0%|          | 0/200 [00:00<?, ?it/s]
+Loss: 0.20901620388031006
+Mean_iou: 0.6619776349920606
+Mean accuracy: 0.7133934820801685
+Loss: 0.4577583074569702
+Mean_iou: 0.5732158341450553
+Mean accuracy: 0.7069158780868355
+Epoch: 3
+  0%|          | 0/200 [00:00<?, ?it/s]
+Loss: 0.3182637691497803
+Mean_iou: 0.5702205760454879
+Mean accuracy: 0.6306840967479446
+Loss: 0.1958755999803543
+Mean_iou: 0.7439536597919255
+Mean accuracy: 0.83741432947528
+Epoch: 4
+  0%|          | 0/200 [00:00<?, ?it/s]
+Loss: 0.33270159363746643
+Mean_iou: 0.7130918024950841
+Mean accuracy: 0.8421648752374012
+Loss: 0.46807652711868286
+Mean_iou: 0.5851512422045414
+Mean accuracy: 0.6978335148774135
+Epoch: 5
+  0%|          | 0/200 [00:00<?, ?it/s]
+Loss: 0.4671440124511719
+Mean_iou: 0.6972234687071713
+Mean accuracy: 0.7865572292266949
+Loss: 0.24244992434978485
+Mean_iou: 0.4197380944412438
+Mean accuracy: 0.6208089958694775
+Epoch: 6
+  0%|          | 0/200 [00:00<?, ?it/s]
+Loss: 0.2690577507019043
+Mean_iou: 0.6539580892793183
+Mean accuracy: 0.7335305517358027
+Loss: 0.18788667023181915
+Mean_iou: 0.8010081038147501
+Mean accuracy: 0.8776691406066733
+Epoch: 7
+  0%|          | 0/200 [00:00<?, ?it/s]
+Loss: 0.22550174593925476
+Mean_iou: 0.6939781579037312
+Mean accuracy: 0.7654249626121021
+Loss: 0.3015763461589813
+Mean_iou: 0.653612605986941
+Mean accuracy: 0.7530871658345091
+Epoch: 8
+  0%|          | 0/200 [00:00<?, ?it/s]
+Loss: 0.0603439062833786
+Mean_iou: 0.8998532102346762
+Mean accuracy: 0.9340878012093792
+Loss: 0.13283905386924744
+Mean_iou: 0.8093269810819232
+Mean accuracy: 0.8755174356121262
+Epoch: 9
+  0%|          | 0/200 [00:00<?, ?it/s]
+Loss: 0.1936957836151123
+Mean_iou: 0.7019670364133609
+Mean accuracy: 0.7650141345233616
+Loss: 0.24283237755298615
+Mean_iou: 0.7418490789225614
+Mean accuracy: 0.8507302387832282
+Epoch: 10
+  0%|          | 0/200 [00:00<?, ?it/s]
+Loss: 0.2386780083179474
+Mean_iou: 0.7769011811483899
+Mean accuracy: 0.8695074056846723
+Loss: 0.14061057567596436
+Mean_iou: 0.7507464778905348
+Mean accuracy: 0.8185035297943031
+
