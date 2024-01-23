@@ -10,4 +10,12 @@ tensorflow: 2.13.1 <br>
 torch: 2.1.2  <br>
 transformers: 4.36.2 <br>
 
-![image](https://github.com/berkayozdemir/unet-resunet-segformer/assets/25156705/94273e52-dc80-4fa8-8e21-779f0eadc781)
+![image](https://github.com/berkayozdemir/unet-resunet-segformer/assets/25156705/94273e52-dc80-4fa8-8e21-779f0eadc781) <br>
+
+Unet Inference: <br>
+![unet1github](https://github.com/berkayozdemir/unet-resunet-segformer/assets/25156705/c33f375e-7b48-4deb-8b98-c4cbd8870f8c)
+
+ResUnet Inference: <br>
+
+![resunet github](https://github.com/berkayozdemir/unet-resunet-segformer/assets/25156705/573ec1cf-11f0-4556-bc98-61ec8418ae2e)
+
