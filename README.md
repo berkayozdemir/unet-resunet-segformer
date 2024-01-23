@@ -11,7 +11,7 @@ torch: 2.1.2  <br>
 transformers: 4.36.2 <br>
 
 Metrics: <br>
-![image](https://github.com/berkayozdemir/unet-resunet-segformer/assets/25156705/a96fd13d-11f7-4ece-984f-3784f8fc1907) <br>
+![image](https://github.com/berkayozdemir/unet-resunet-segformer/assets/25156705/6cb7d8a4-50d4-4d98-bf12-b2a4eb7a1d3d) <br>
 
 
 Unet Inference: <br>
