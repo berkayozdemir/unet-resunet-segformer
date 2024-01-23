@@ -82,6 +82,8 @@ transform = A.Compose([
 
 '''
 
+
+
 def _read_to_tensor(fname, output_height=512, output_width=512, normalize_data=False):
     '''Function to read images from given image file path, and provide resized images as tensors
         Inputs:
@@ -104,7 +106,7 @@ def _read_to_tensor(fname, output_height=512, output_width=512, normalize_data=F
         output = (output - 128) / 128
     return output
 
-img_dir = './data/'
+img_dir = '../data/'
 
 # Required image dimensio
 def read_images(img_dir):
@@ -339,11 +341,11 @@ def ValAugmentGenerator(seed=1, batch_size=5):
     '''
     val_image_generator = val_frames_datagen.flow_from_directory(
         DATA_PATH + 'val_frames/',
-        batch_size=batch_size, seed=seed)
+        batch_size=batch_size, seed=seed,target_size=(512, 512))
 
     val_mask_generator = val_masks_datagen.flow_from_directory(
         DATA_PATH + 'val_masks/',
-        batch_size=batch_size, seed=seed)
+        batch_size=batch_size, seed=seed,target_size=(512, 512))
 
     while True:
         X1i = val_image_generator.next()
@@ -388,13 +390,22 @@ model.compile(optimizer='adam', loss="categorical_crossentropy", metrics=metrics
 
 
 
-batch_size = 16
+batch_size = 8
 validation_steps = 2
-num_epochs = 50
+num_epochs = 25
 
-result = model.fit_generator(TrainAugmentGenerator(), steps_per_epoch=18 ,
+
+
+from  keras.callbacks import EarlyStopping,ModelCheckpoint,ReduceLROnPlateau
+
+earlyStopping = EarlyStopping(monitor='val_loss', patience=10, verbose=0, mode='min')
+mcp_save = ModelCheckpoint('unet.h5', save_best_only=True, monitor='val_loss', mode='min')
+reduce_lr_loss = ReduceLROnPlateau(monitor='val_loss', factor=0.1, patience=7, verbose=1, epsilon=1e-4, mode='min')
+
+
+result = model.fit_generator(TrainAugmentGenerator(), steps_per_epoch=20 ,
                 validation_data = ValAugmentGenerator(),
-                validation_steps = validation_steps, epochs=num_epochs)
+                validation_steps = validation_steps, epochs=num_epochs, callbacks=[ mcp_save, reduce_lr_loss  ,earlyStopping  ])
 
 N = len(result.history['loss'])
 
@@ -420,7 +431,27 @@ plt.legend(loc="lower left")
 plt.show()
 
 testing_gen = ValAugmentGenerator()
+
 batch_img,batch_mask = next(testing_gen)
 pred_all= model.predict(batch_img)
-np.shape(pred_all)
-testing_gen = ValAugmentGenerator()
+
+
+for i in range(0, np.shape(pred_all)[0]):
+    fig = plt.figure(figsize=(20, 8))
+
+    ax1 = fig.add_subplot(1, 3, 1)
+    ax1.imshow(batch_img[i])
+    ax1.title.set_text('Actual frame')
+
+
+    ax2 = fig.add_subplot(1, 3, 2)
+    ax2.set_title('Ground truth labels')
+    ax2.imshow(onehot_to_rgb(batch_mask[i], id2code))
+
+
+    ax3 = fig.add_subplot(1, 3, 3)
+    ax3.set_title('Predicted labels')
+    ax3.imshow(onehot_to_rgb(pred_all[i], id2code))
+
+
+    plt.show()
