@@ -1,0 +1,69 @@
+C:\Users\berka\PycharmProjects\pythonProject9\venv\Scripts\python.exe C:\Users\berka\PycharmProjects\pythonProject9\xx\resunet\train.py 
+2024-01-23 07:32:06.841497: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE SSE2 SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Is there a GPU available: 
+False
+Is the Tensor on GPU #0:  
+False
+Device name: /job:localhost/replica:0/task:0/device:CPU:0
+True
+WARNING:tensorflow:From C:\Users\berka\PycharmProjects\pythonProject9\xx\resunet\train.py:31: is_gpu_available (from tensorflow.python.framework.test_util) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.config.list_physical_devices('GPU')` instead.
+400 frame files found in the provided directory.
+400 mask files found in the provided directory.
+Completed importing 400 frame images from the provided directory.
+Completed importing 400 mask images from the provided directory.
+[WinError 183] Halen varolan bir dosya oluşturulamaz: '../data/train_frames/train'
+[WinError 183] Halen varolan bir dosya oluşturulamaz: '../data/train_masks/train'
+[WinError 183] Halen varolan bir dosya oluşturulamaz: '../data/val_frames/val'
+[WinError 183] Halen varolan bir dosya oluşturulamaz: '../data/val_masks/val'
+Saved 400 frames to directory ../data/
+Saved 400 masks to directory ../data/
+WARNING:tensorflow:`epsilon` argument is deprecated and will be removed, use `min_delta` instead.
+C:\Users\berka\PycharmProjects\pythonProject9\xx\resunet\train.py:397: UserWarning: `Model.fit_generator` is deprecated and will be removed in a future version. Please use `Model.fit`, which supports generators.
+  result = model.fit_generator(TrainAugmentGenerator(), steps_per_epoch=20 ,
+Found 320 images belonging to 1 classes.
+Found 320 images belonging to 1 classes.
+Epoch 1/25
+2024-01-23 07:32:43.909146: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 754974720 exceeds 10% of free system memory.
+2024-01-23 07:32:43.940750: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 754974720 exceeds 10% of free system memory.
+ 1/20 [>.............................] - ETA: 6:16 - loss: 2.6990 - dice_coef: 0.2393 - iou_coef: 0.0947 - accuracy: 0.14472024-01-23 07:32:57.513891: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 754974720 exceeds 10% of free system memory.
+2024-01-23 07:32:57.521815: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 754974720 exceeds 10% of free system memory.
+ 2/20 [==>...........................] - ETA: 4:05 - loss: 2.1515 - dice_coef: 0.4241 - iou_coef: 0.2071 - accuracy: 0.36192024-01-23 07:33:15.348111: W tensorflow/tsl/framework/cpu_allocator_impl.cc:83] Allocation of 754974720 exceeds 10% of free system memory.
+20/20 [==============================] - ETA: 0s - loss: 1.1778 - dice_coef: 0.6447 - iou_coef: 0.3452 - accuracy: 0.6028 Found 80 images belonging to 1 classes.
+Found 80 images belonging to 1 classes.
+C:\Users\berka\PycharmProjects\pythonProject9\venv\lib\site-packages\keras\src\engine\training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+20/20 [==============================] - 297s 15s/step - loss: 1.1778 - dice_coef: 0.6447 - iou_coef: 0.3452 - accuracy: 0.6028 - val_loss: 68.4866 - val_dice_coef: 0.0372 - val_iou_coef: 0.0189 - val_accuracy: 0.0328 - lr: 0.0010
+Epoch 2/25
+20/20 [==============================] - 274s 14s/step - loss: 0.9699 - dice_coef: 0.6765 - iou_coef: 0.3598 - accuracy: 0.6429 - val_loss: 5.0729 - val_dice_coef: 0.2717 - val_iou_coef: 0.1191 - val_accuracy: 0.2187 - lr: 0.0010
+Epoch 3/25
+20/20 [==============================] - 287s 14s/step - loss: 0.7808 - dice_coef: 0.7564 - iou_coef: 0.4536 - accuracy: 0.7235 - val_loss: 2.0413 - val_dice_coef: 0.5185 - val_iou_coef: 0.2871 - val_accuracy: 0.4736 - lr: 0.0010
+Epoch 4/25
+20/20 [==============================] - 279s 14s/step - loss: 0.7983 - dice_coef: 0.7306 - iou_coef: 0.4106 - accuracy: 0.6861 - val_loss: 1.0386 - val_dice_coef: 0.6781 - val_iou_coef: 0.3827 - val_accuracy: 0.6196 - lr: 0.0010
+Epoch 5/25
+20/20 [==============================] - 278s 14s/step - loss: 0.7416 - dice_coef: 0.7631 - iou_coef: 0.4649 - accuracy: 0.7205 - val_loss: 1.6396 - val_dice_coef: 0.5727 - val_iou_coef: 0.3062 - val_accuracy: 0.5060 - lr: 0.0010
+Epoch 6/25
+20/20 [==============================] - 280s 14s/step - loss: 0.8192 - dice_coef: 0.7358 - iou_coef: 0.4267 - accuracy: 0.6774 - val_loss: 6.2850 - val_dice_coef: 0.4550 - val_iou_coef: 0.2884 - val_accuracy: 0.3911 - lr: 0.0010
+Epoch 7/25
+20/20 [==============================] - 271s 14s/step - loss: 0.7875 - dice_coef: 0.7406 - iou_coef: 0.4294 - accuracy: 0.6807 - val_loss: 13.7695 - val_dice_coef: 0.4556 - val_iou_coef: 0.2547 - val_accuracy: 0.3854 - lr: 0.0010
+Epoch 8/25
+20/20 [==============================] - 274s 14s/step - loss: 0.7188 - dice_coef: 0.7678 - iou_coef: 0.4613 - accuracy: 0.7347 - val_loss: 3.6860 - val_dice_coef: 0.2854 - val_iou_coef: 0.1122 - val_accuracy: 0.1399 - lr: 0.0010
+Epoch 9/25
+20/20 [==============================] - 279s 14s/step - loss: 0.8021 - dice_coef: 0.7396 - iou_coef: 0.4326 - accuracy: 0.6881 - val_loss: 1.9792 - val_dice_coef: 0.4154 - val_iou_coef: 0.1953 - val_accuracy: 0.2713 - lr: 0.0010
+Epoch 10/25
+20/20 [==============================] - 278s 14s/step - loss: 0.7651 - dice_coef: 0.7612 - iou_coef: 0.4544 - accuracy: 0.7187 - val_loss: 2.0265 - val_dice_coef: 0.3985 - val_iou_coef: 0.2069 - val_accuracy: 0.3316 - lr: 0.0010
+Epoch 11/25
+20/20 [==============================] - ETA: 0s - loss: 0.7732 - dice_coef: 0.7539 - iou_coef: 0.4488 - accuracy: 0.7169 
+Epoch 11: ReduceLROnPlateau reducing learning rate to 0.00010000000474974513.
+20/20 [==============================] - 280s 14s/step - loss: 0.7732 - dice_coef: 0.7539 - iou_coef: 0.4488 - accuracy: 0.7169 - val_loss: 2.3175 - val_dice_coef: 0.5279 - val_iou_coef: 0.2836 - val_accuracy: 0.4382 - lr: 0.0010
+Epoch 12/25
+20/20 [==============================] - 289s 14s/step - loss: 0.7213 - dice_coef: 0.7691 - iou_coef: 0.4558 - accuracy: 0.7291 - val_loss: 1.5284 - val_dice_coef: 0.5078 - val_iou_coef: 0.2474 - val_accuracy: 0.3366 - lr: 1.0000e-04
+Epoch 13/25
+20/20 [==============================] - 286s 14s/step - loss: 0.7499 - dice_coef: 0.7579 - iou_coef: 0.4516 - accuracy: 0.7178 - val_loss: 1.6182 - val_dice_coef: 0.4715 - val_iou_coef: 0.2244 - val_accuracy: 0.2757 - lr: 1.0000e-04
+Epoch 14/25
+20/20 [==============================] - 286s 14s/step - loss: 0.6683 - dice_coef: 0.7891 - iou_coef: 0.4842 - accuracy: 0.7555 - val_loss: 1.2178 - val_dice_coef: 0.5935 - val_iou_coef: 0.2832 - val_accuracy: 0.4654 - lr: 1.0000e-04
+Found 80 images belonging to 1 classes.
+Found 80 images belonging to 1 classes.
+1/1 [==============================] - 3s 3s/step
