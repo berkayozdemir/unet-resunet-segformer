@@ -3,6 +3,10 @@ Put your train images into: data/train. <br>
 Put your train images into: data/mask. <br>
 Run the train.py in the architecture you want.<br>
 
+MODE 1: predict folder, MODE 2: predict image. <br>
+For infer.py, put your image into: data/predict/images. <br>
+
+
 
 PIP VERSIONS:<br>
 python : 3.9.1 <br>
